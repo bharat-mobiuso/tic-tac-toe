@@ -124,10 +124,12 @@ function cell9Click(){
 function gameStatus(){
     if(isOver()){
         gameStatusText.innerHTML = player ? 'Player 0 Wins' : 'Player X Wins';
-        disabledAll();
+        gameStatusText.style.color = 'green';
+        setDisabled(true);
     } 
     else if(isDraw()){
         gameStatusText.innerHTML = "game is draw";
+        gameStatusText.style.color = 'red';
     }
     else{
         gameStatusText.innerHTML = player ? "Player X Turn" : 'Player 0 Turn';
@@ -146,9 +148,7 @@ function isOver(){
         ||((cell3.value === "X" || cell3.value === '0')&&cell3.value === cell5.value && cell5.value === cell7.value)){
         return true;
     }
-    else {
-        return false;
-    }
+    return false;
 }
 function isDraw(){
     if(   (cell1.value === "X" || cell1.value === '0')
@@ -162,31 +162,21 @@ function isDraw(){
         &&(cell9.value === "X" || cell9.value === '0')){
             return true;
     }
-    else{
-        false;
-    }
+    return false;
 }
-function disabledAll(){
-    cell1.disabled = true;
-    cell2.disabled = true;
-    cell3.disabled = true;
-    cell4.disabled = true;
-    cell5.disabled = true;
-    cell6.disabled = true;
-    cell7.disabled = true;
-    cell8.disabled = true;
-    cell9.disabled = true;
+function setDisabled(value){
+    cell1.disabled = value;
+    cell2.disabled = value;
+    cell3.disabled = value;
+    cell4.disabled = value;
+    cell5.disabled = value;
+    cell6.disabled = value;
+    cell7.disabled = value;
+    cell8.disabled = value;
+    cell9.disabled = value;
 }
 function reset(){
-    cell1.disabled = false;
-    cell2.disabled = false;
-    cell3.disabled = false;
-    cell4.disabled = false;
-    cell5.disabled = false;
-    cell6.disabled = false;
-    cell7.disabled = false;
-    cell8.disabled = false;
-    cell9.disabled = false;
+    setDisabled(false);
     
     cell1.value = null;
     cell2.value = null;
@@ -200,5 +190,6 @@ function reset(){
 
     player = 1;
     gameStatusText.innerHTML = "Player X Turn";
+    gameStatusText.style.color = 'black';
     console.log("reset called");
 }
