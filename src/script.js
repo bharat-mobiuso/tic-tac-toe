@@ -123,7 +123,7 @@ function cell9Click(){
 
 function gameStatus(){
     if(isOver()){
-        gameStatusText.innerHTML = player ? 'Player 0 Wins' : 'Player X Wins';
+        gameStatusText.innerHTML = player ? "Player '0' Wins" : "Player 'X' Wins";
         gameStatusText.style.color = 'green';
         setDisabled(true);
     } 
@@ -132,7 +132,7 @@ function gameStatus(){
         gameStatusText.style.color = 'red';
     }
     else{
-        gameStatusText.innerHTML = player ? "Player X Turn" : 'Player 0 Turn';
+        gameStatusText.innerHTML = player ? "Player 'X' Turn" : "Player '0' Turn";
     }
 }
 
@@ -189,7 +189,7 @@ function reset(){
     cell9.value = null;
 
     player = 1;
-    gameStatusText.innerHTML = "Player X Turn";
+    gameStatusText.innerHTML = "Player 'X' Turn";
     gameStatusText.style.color = 'black';
     console.log("reset called");
 }
