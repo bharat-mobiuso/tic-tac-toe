@@ -137,18 +137,85 @@ function gameStatus(){
 }
 
 function isOver(){
-    console.log("isOver Called");
-    if(   ((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell2.value && cell2.value === cell3.value)
-        ||((cell4.value === "X" || cell4.value === '0')&&cell4.value === cell5.value && cell5.value === cell6.value)
-        ||((cell7.value === "X" || cell7.value === '0')&&cell7.value === cell8.value && cell8.value === cell9.value)
-        ||((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell4.value && cell4.value === cell7.value)
-        ||((cell2.value === "X" || cell2.value === '0')&&cell2.value === cell5.value && cell5.value === cell8.value)
-        ||((cell3.value === "X" || cell3.value === '0')&&cell3.value === cell6.value && cell6.value === cell9.value)
-        ||((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell5.value && cell5.value === cell9.value)
-        ||((cell3.value === "X" || cell3.value === '0')&&cell3.value === cell5.value && cell5.value === cell7.value)){
+    if( isRow1Over() || isRow2Over() || isRow3Over() || 
+        isCol1Over() || isCol2Over() || isCol3Over() || 
+        isCross1Over() || isCross2Over() ){
         return true;
     }
     return false;
+
+    function isRow1Over(){
+        if((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell2.value && cell2.value === cell3.value){
+            cell1.style.color = 'red';
+            cell2.style.color = 'red';
+            cell3.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isRow2Over(){
+        if((cell4.value === "X" || cell4.value === '0')&&cell4.value === cell5.value && cell5.value === cell6.value){
+            cell4.style.color = 'red';
+            cell5.style.color = 'red';
+            cell6.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isRow3Over(){
+        if((cell7.value === "X" || cell7.value === '0')&&cell7.value === cell8.value && cell8.value === cell9.value){
+            cell7.style.color = 'red';
+            cell8.style.color = 'red';
+            cell9.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isCol1Over(){
+        if((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell4.value && cell4.value === cell7.value){
+            cell1.style.color = 'red';
+            cell4.style.color = 'red';
+            cell7.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isCol2Over(){
+        if((cell2.value === "X" || cell2.value === '0')&&cell2.value === cell5.value && cell5.value === cell8.value){
+            cell2.style.color = 'red';
+            cell5.style.color = 'red';
+            cell8.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isCol3Over(){
+        if((cell3.value === "X" || cell3.value === '0')&&cell3.value === cell6.value && cell6.value === cell9.value){
+            cell3.style.color = 'red';
+            cell6.style.color = 'red';
+            cell9.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isCross1Over(){
+        if((cell1.value === "X" || cell1.value === '0')&&cell1.value === cell5.value && cell5.value === cell9.value){
+            cell1.style.color = 'red';
+            cell5.style.color = 'red';
+            cell9.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
+    function isCross2Over(){
+        if((cell3.value === "X" || cell3.value === '0')&&cell3.value === cell5.value && cell5.value === cell7.value){
+            cell3.style.color = 'red';
+            cell5.style.color = 'red';
+            cell7.style.color = 'red';
+            return true;
+        }
+        return false;
+    }
 }
 function isDraw(){
     if(   (cell1.value === "X" || cell1.value === '0')
@@ -177,7 +244,16 @@ function setDisabled(value){
 }
 function reset(){
     setDisabled(false);
+    resetCellValue();
+    resetCellColor();
     
+    player = 1;
+    gameStatusText.innerHTML = "Player 'X' Turn";
+    gameStatusText.style.color = 'black';
+    console.log("reset called");
+}
+
+function resetCellValue(){ 
     cell1.value = null;
     cell2.value = null;
     cell3.value = null;
@@ -187,9 +263,18 @@ function reset(){
     cell7.value = null;
     cell8.value = null;
     cell9.value = null;
+}
 
-    player = 1;
-    gameStatusText.innerHTML = "Player 'X' Turn";
-    gameStatusText.style.color = 'black';
-    console.log("reset called");
+function resetCellColor(){
+    
+    cell1.style.color = 'black';
+    cell2.style.color = 'black';
+    cell3.style.color = 'black';
+    cell4.style.color = 'black';
+    cell5.style.color = 'black';
+    cell6.style.color = 'black';
+    cell7.style.color = 'black';
+    cell8.style.color = 'black';
+    cell9.style.color = 'black';
+
 }
