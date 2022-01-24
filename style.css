@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gochi Hand', cursive;
+}
+.text-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    margin-bottom: 4px;
+}
+.cell{
+    width: 5rem;
+    height: 5rem;
+    margin-top: 0;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 3rem;
+    text-align: center;
+}
+.reset-btn{
+    font-family: 'Gochi Hand', cursive;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Tic Tac Toe</h1>
+        <div class="grid">
+            <div class="row">
+                <input type="text" class="cell" id="cell1" onclick="cell1Click()" readonly/>
+                <input type="text" class="cell" id="cell2" onclick="cell2Click()" readonly/>
+                <input type="text" class="cell" id="cell3" onclick="cell3Click()" readonly/>
+            </div>
+            <div class="row">
+                <input type="text" class="cell" id="cell4" onclick="cell4Click()" readonly/>
+                <input type="text" class="cell" id="cell5" onclick="cell5Click()" readonly/>
+                <input type="text" class="cell" id="cell6" onclick="cell6Click()" readonly/>
+            </div>
+            <div class="row">
+                <input type="text" class="cell" id="cell7" onclick="cell7Click()" readonly/>
+                <input type="text" class="cell" id="cell8" onclick="cell8Click()" readonly/>
+                <input type="text" class="cell" id="cell9" onclick="cell9Click()" readonly/>
+            </div>
+        </div>
+        <div class="text-center">
+            <h1 class="game-status" id="game-status-text">Player X Turn</h1>
+        </div>
+        <div class="text-center">
+            <button class="reset-btn" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
