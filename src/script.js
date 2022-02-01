@@ -23,7 +23,7 @@ cell.forEach(function(cellInstance) {
             
         var clickedCell = this.getAttribute("data-value");
         gameBoard[clickedCell] = player ? "X" : "0";
-        console.log(gameBoard);
+        //console.log(gameBoard);
         this.value = player ? "X" : "0";
         player = player ? 0 : 1;
         this.setAttribute("disabled",true);
@@ -48,11 +48,11 @@ function gameStatus(){
 
 function isOver(){
     for(let i=0;i<8;i++){
-        var Case = winningCases[i];
-        if(gameBoard[Case[0]] && gameBoard[Case[0]] === gameBoard[Case[1]] && gameBoard[Case[1]] === gameBoard[Case[2]]){
+        var winCase = winningCases[i];
+        if(gameBoard[winCase[0]] && gameBoard[winCase[0]] === gameBoard[winCase[1]] && gameBoard[winCase[1]] === gameBoard[winCase[2]]){
             const cell = document.querySelectorAll('.cell').forEach(function(cellInstance){
                 let cellNumber= cellInstance.getAttribute("data-value");
-                if(cellNumber == Case[0] || cellNumber == Case[1] || cellNumber == Case[2]){
+                if(cellNumber == winCase[0] || cellNumber == winCase[1] || cellNumber == winCase[2]){
 
                     cellInstance.style.backgroundColor = 'green';
                     cellInstance.style.color = 'white';
