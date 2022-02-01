@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,19 +12,19 @@
         <h1 class="text-center">Tic Tac Toe</h1>
         <div class="grid">
             <div class="row">
-                <input type="text" class="cell" id="cell1" onclick="cell1Click()" readonly/>
-                <input type="text" class="cell" id="cell2" onclick="cell2Click()" readonly/>
-                <input type="text" class="cell" id="cell3" onclick="cell3Click()" readonly/>
+                <input type="text" class="cell" id="cell1" data-value="1" readonly/>
+                <input type="text" class="cell" id="cell2" data-value="2" readonly/>
+                <input type="text" class="cell" id="cell3" data-value="3" readonly/>
             </div>
             <div class="row">
-                <input type="text" class="cell" id="cell4" onclick="cell4Click()" readonly/>
-                <input type="text" class="cell" id="cell5" onclick="cell5Click()" readonly/>
-                <input type="text" class="cell" id="cell6" onclick="cell6Click()" readonly/>
+                <input type="text" class="cell" id="cell4" data-value="4" readonly/>
+                <input type="text" class="cell" id="cell5" data-value="5" readonly/>
+                <input type="text" class="cell" id="cell6" data-value="6" readonly/>
             </div>
             <div class="row">
-                <input type="text" class="cell" id="cell7" onclick="cell7Click()" readonly/>
-                <input type="text" class="cell" id="cell8" onclick="cell8Click()" readonly/>
-                <input type="text" class="cell" id="cell9" onclick="cell9Click()" readonly/>
+                <input type="text" class="cell" id="cell7" data-value="7" readonly/>
+                <input type="text" class="cell" id="cell8" data-value="8" readonly/>
+                <input type="text" class="cell" id="cell9" data-value="9" readonly/>
             </div>
         </div>
         <div class="text-center">
@@ -35,5 +35,14 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <!-- <script>
+        const cell = document.querySelectorAll('.cell');
+        cell.forEach(function(userItem) {
+            userItem.addEventListener('click',function(){
+                console.log(this);
+                this.value = "X";
+            })
+        });
+    </script> -->
 </body>
 </html>
