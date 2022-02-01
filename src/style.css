@@ -4,14 +4,19 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Gochi Hand', cursive;
+    background-color: black;
+}
+h1{
+    margin-bottom: 5rem;
 }
 .text-center{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 .row{
-    margin-bottom: 4px;
+    display:flex;
 }
 .cell{
     width: 5rem;
@@ -20,7 +25,27 @@ body{
     font-family: 'Gochi Hand', cursive;
     font-size: 3rem;
     text-align: center;
+    border: 5px solid white;
+    background-color: black;
+
+}
+#cell1,#cell2,#cell3{
+    border-top: 5px solid transparent;
+}
+#cell1,#cell4,#cell7{
+    border-left: 5px solid transparent;
+}
+#cell3,#cell6,#cell9{
+    border-right: 5px solid transparent;
+}
+#cell7,#cell8,#cell9{
+    border-bottom: 5px solid transparent;
 }
 .reset-btn{
     font-family: 'Gochi Hand', cursive;
+    color: white;
+    font-size: large;
+    background-color: black;
+    padding: 1rem 2rem;
+    border-radius: 10px;
 }
